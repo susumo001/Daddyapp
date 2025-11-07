@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <style>
+    body { font-family: Arial; background:#f5f5f5; }
+    .box { max-width:900px; margin:auto; background:#fff; padding:20px; border-radius:8px;}
+    h2 { color:#800; }
+    h1 {
+      text-align: center;
+      color: #800;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    thead {
+      background: maroon;
+      color: #fff;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+      font-size: 14px;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    .btn {
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .btn-confirm {
+      background: green;
+      color: #fff;
+    }
+    .btn-reject {
+      background: red;
+      color: #fff;
+    }
+    .tab-buttons {
+  margin-bottom: 10px;
+}
+.tab-buttons button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.tab-buttons button.active {
+  background: #333;
+  color: #fff;
+}
+.tab-content {
+  display: none;
+}
+  </style>
+</head>
+<body>
+  <div id="adminLoginBox" class="box">
+    <h2>Admin Login</h2>
+    <input id="adminUsername" placeholder="Username"><br><br>
+    <input id="adminPassword" type="password" placeholder="Password"><br><br>
+    <button onclick="adminLogin()">Login</button>
+    </div>
+    <div id="adminDashboard" class="box" style="display:none;">
+  <h1>Admin Panel</h1>
+
+  <!-- ✅ Tab Buttons -->
+  <div class="tab-buttons">
+    <button onclick="showTab('rechargeTab')">Recharge Requests</button>
+    <button onclick="showTab('withdrawTab')">Withdraw Requests</button>
+  </div>
+
+  <!-- ✅ Recharge Requests Table -->
+  <div id="rechargeTab" class="tab-content"
+   style="display:block;">
+    <h2>Recharge Requests</h2><hr>
+    <h2 id="total-Amont"> Total ₹</h2><hr><hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Phone</th>
+          <th>Amount</th>
+          <th>UPI</th>
+          <th>UTR</th>
+          <th>OrderId</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="rechargeTableBody">
+        <!-- JS से rows यहाँ आएँगी -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ✅ Withdraw Requests Table -->
+  <div id="withdrawTab" class="tab-content" style="display:none;">
+    <h2>Withdraw Requests</h2><hr>
+     <h2 id="totalWithdraw-Amont"> Total ₹</h2><hr><hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Phone</th>
+          <th>Amount</th>
+          <th>pay amount</th>
+          <th>Bank Details</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="withdrawTableBody">
+        <!-- JS से rows यहाँ आएँगी -->
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="quickPopup" 
+     style="
+        display:none;
+        
+        padding:39px 69px;
+        background:#333;
+        color:#fff;
+        border-radius:6px;
+        box-shadow:0 2px 8px rgba(0,0,0,.3);
+        z-index:9999;
+        font-size:15px;
+        text-align:center;">
+  Processing…
+</div>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html> 
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>h3</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />  
+  <link rel="stylesheet" href="style.css" />  
+  <script src="https://unpkg.com/lucide@latest"></script>  
+</head>  
+<body>  <!-- Login/Register Section -->  <div id="auth" class="auth-screen">  
+  <div class="img-group">  
+    <img src="/Picsart_25-07-09_13-15-55-837.png">  
+  </div>    <div class="tabs">  
+    <button onclick="switchTab('register')" id="registerTab" class="active">Register</button>&nbsp;&nbsp;&nbsp;  
+    <button onclick="switchTab('login')" id="loginTab">Login</button>  
+  </div>    <!-- Register form: visible by default -->    <div id="registerForm" style="display: block;">  
+    <input type="tel" id="regPhone" placeholder="Enter phone number">  
+    <input type="password" id="regPass" placeholder="Enter new password">  
+    <input type="password" id="regPassConfirm" placeholder="Confirm password">  
+    <input type="text" id="referralCode" placeholder="Referral code">  
+    <button type="button" onclick="register()" class="auth-btn">Register</button> 
+    <p onclick="switchTab('login')">I already have an account</p>  
+  </div>    <!-- Login form: hidden by default -->    <div id="loginForm" style="display: none;">  
+    <input type="tel" id="loginPhone" placeholder="Enter phone number">  
+    <input type="password" id="loginPass" placeholder="Enter password">  
+    <button type="button" onclick="login()" class="auth-btn">Login</button>  
+    <p onclick="switchTab('register')">No account? Register</p>  
+  </div>  
+</div>  <!-- Main App (After Login) -->  <div id="app" class="app-screen" style="display: none;">  
+  <!-- Bottom Navigation -->  
+  <nav class="bottom-nav">  
+    <div class="nav-item active" onclick="showPage('home')">  
+      <i data-lucide="home"></i><span>Home</span>  
+    </div>  
+    <div class="nav-item" onclick="showPage('share')">  
+      <i data-lucide="share-2"></i><span>Share</span>  
+    </div>  
+    <div class="nav-item" onclick="showPage('team')">  
+      <i data-lucide="users"></i><span>Team</span>  
+    </div>  
+    <div class="nav-item" onclick="showPage('my')">  
+      <i data-lucide="user"></i><span>My</span>  
+    </div>    </nav>
+    <div id="home" class="page">  
+           <header class="top-header">  
+          <img src="/Picsart_25-07-09_13-15-55-837.png"><br>  <!-- Image Slider -->  
+      <div class="slider-container">
+
+  <div class="slider" id="slider"><img src="/9d86834d9334bce5726a50a6a4b34f46.jpg" alt="Slide 1" /><img src="/9d86834d9334bce5726a50a6a4b34f46.jpg" alt="Slide 2" /><img src="/9d86834d9334bce5726a50a6a4b34f46.jpg" alt="Slide 3" />  </div>  
+      </div><br><br>  
+    </header><br>  
+
+    <!-- Navigation Tabs -->  
+     
+    <div class="tab-bar">
+
+  <div onclick="openFullPage('rechargePage')" class="tab-btn">  
+    <i class="fas fa-wallet fa-2x"></i><br><b><span>Recharge</span></b>  
+  </div>  
+  <div onclick="openFullPage('withdrawPage')" class="tab-btn">  
+    <i class="fas fa-money-bill-alt fa-2x"></i><br><b><span>Withdraw</span></b>  
+  </div>  
+  <div onclick="openFullPage('servicePage')" class="tab-btn">  
+    <i class="fas fa-user-tie fa-2x"></i><br><b><span>Service</span></b>  
+  </div>  
+</div>  
+<!-- Fullscreen Recharge Page -->  
+<!-- Recharge Full Page -->  
+
+    <!-- Plan Buttons -->  
+    <div class="btn-group">    
+     &nbsp;&nbsp; <button id="stableBtn" class="active"><b>Stable Plan </b></button>  
+      <button id="activityBtn"><b>Fast VIP Plan</b></button>  
+    </div><br>  
+
+    <!-- Sections -->  
+    <div id="stableSection">   
+      <div class="vip-section">  
+        <!-- VIP Cards -->  
+        <!-- Repeat this card for each VIP plan -->  
+        <!-- Sample VIP Card: -->  
+        
+      <div class="plan-card">  
+       <div class="upgrade"> <h2>Upgrade VIP 1</h2></div>
+
+  <div class="top-row">  
+    <img src="/20HP-DIESEL-ENGINE-2.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹480</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹95</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹5700</p>  
+    </div>  
+  </div>     <div class="button-row">
+    <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'Upgrade VIP 1',
+  price: 480,
+  daily: 95,
+  cycle: '60 days',
+  image: '/20HP-DIESEL-ENGINE-2.jpg'
+})">Buy Now</button>
+    </div>
+  </div>
+
+
+
+<!-- 🧾 Next Page Section (Initially hidden) -->
+
+<br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Upgrade VIP 2</h2></div>  
+  <div class="top-row">  
+    <img src="/4.43.png" class="engine-img" />  
+    <div class="price-text">price: ₹950</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹210</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹12600</p>  
+    </div>  
+  </div><div class="button-row">
+     <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'Upgrade VIP 2',
+  price: 950,
+  daily: 210,
+  cycle: '60 days',
+  image: '/4.43.png'
+})">Buy Now</button>
+    </div>
+  </div>
+<br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Upgrade VIP 3</h2></div>  
+  <div class="top-row">  
+    <img src="/912is.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹2160</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹502</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹30120</p>  
+    </div>  
+  </div>    <div class="button-row">
+      <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'Upgrade VIP 3',
+  price: 2160,
+  daily: 502,
+  cycle: '60 days',
+  image: '/912is.jpg'
+})">Buy Now</button>
+    </div>
+</div><br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Upgrade VIP 4</h2></div>  
+  <div class="top-row">  
+    <img src="/SEP570.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹3830</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹1250</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹75000</p>  
+    </div>  
+  </div>    <div class="button-row">
+      <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'Upgrade VIP 4',
+  price: 3830,
+  daily: 1250,
+  cycle: '60 days',
+  image: '/SEP570.jpg'
+})">Buy Now</button>
+    </div>
+</div><br><br><br>  <!-- VIP 2 to VIP 6 -->  
+        <!-- Same content with headings changed -->  
+        <!-- ... repeat similar VIP cards ... -->  
+        <!-- Total 6 VIP cards provided by you -->  
+
+      </div>  </div>
+    
+
+    <!-- Activity Section -->  
+    <div id="activitySection" style="display: none;">  
+      <div class="vip-section">  
+          
+        <!-- Best Solar Plan cards -->  
+        <!-- Total 6 cards -->  
+         <div class="plan-card">  
+       <div class="upgrade"> <h2> Power Plan v1</h2></div><br>
+
+  <div class="top-row">  
+    <img src="/BUKH-V8-350-500-HP-image-1.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹200</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹140</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹8400</p>  
+    </div>  
+  </div>   <div class="button-row">
+     <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'High Power Plan',
+  price: 100,
+  daily: 140,
+  cycle: '60 days',
+  image: '/BUKH-V8-350-500-HP-image-1.jpg'
+})">Buy Now</button>
+    </div>
+</div>
+ 
+<br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Power Plan v2</h2></div><br>  
+  <div class="top-row">  
+    <img src="/BUKH-V8-350-500-HP-image-1.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹580</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹205</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹12300</p>  
+    </div>  
+  </div>   <div class="button-row">
+     <button class="buy-btn" onclick="handleBuyClick({
+  planName: 'High Power Plan',
+  price: 580,
+  daily: 205,
+  cycle: '60 days',
+  image: '/BUKH-V8-350-500-HP-image-1.jpg'
+})">Buy Now</button>
+    </div>
+</div><br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Power Plan v3</h2></div><br>  
+  <div class="top-row">  
+    <img src="/BUKH-V8-350-500-HP-image-1.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹1120</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹345</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">20700</p>  
+    </div>  
+  </div>    <div class="button-row">  
+    <button class="buy-soon">Presale</button>  
+  </div>  
+</div><br>  
+<div class="plan-card">  
+           <div class="upgrade"> <h2>Power Plan v4</h2></div><br>  
+  <div class="top-row">  
+    <img src="/BUKH-V8-350-500-HP-image-1.jpg" class="engine-img" />  
+    <div class="price-text">price: ₹1980</div>  
+  </div>  
+<div class="info-row">  
+    <div>  
+      <p class="info-label">cycle</p>  
+      <p class="info-value">60day</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">daily</p>  
+      <p class="info-value">₹640</p>  
+    </div>&nbsp; <div>  
+      <p class="info-label">total</p>  
+      <p class="info-value">₹38400</p>  
+    </div>  
+  </div>    <div class="button-row">  
+    <button class="buy-soon">Presale</button>  
+  </div>  
+</div><br><br><br>  
+          </div>  
+        </div>  
+      </div>  
+    
+    <div id="rechargePage" class="fullpage" style="display: none;">    
+  <button onclick="closeFullPage()" class="back-btn">❮ </button>    
+  <h2>Recharge </h2>    
+  <br><br><br><br><br><br><br><br>  
+   <!-- Amount Input -->    
+  <div class="card">    
+    <label style="font-size: 20px;">Recharge amount</label> <br> <br><br>  
+    <input type="number" id="rechargeInput" placeholder="₹ Amount" />    
+    <div class="quick-amounts">    
+      <!-- Amount buttons -->    <button onclick="setAmount(300)">300</button>    
+  <button onclick="setAmount(500)">500</button>    
+  <button onclick="setAmount(1000)">1000</button>    
+  <button onclick="setAmount(1500)">1500</button>    
+  <button onclick="setAmount(2000)">2000</button>    
+  <button onclick="setAmount(2500)">2500</button>    
+  <button onclick="setAmount(3000)">3000</button>    
+  <button onclick="setAmount(4000)">4000</button>    
+  <button onclick="setAmount(5000)">5000</button>    
+</div>
+
+  </div>    <!-- Channel Selector -->    <div class="card">    
+    <label>Channel</label>    
+    <div class="channel" onclick="selectChannel(1)">    
+      <span>Qe Pay 1</span>    
+      <input type="radio" name="channel" id="radio-ptm" checked />    
+    </div>    
+    <div class="channel" onclick="selectChannel(2)">    
+      <span>Qe Pay 2</span>    
+      <input type="radio" name="channel" id="radio-qepay"/>    
+    </div>    
+  </div>    <!-- Explain Section -->    <div class="card explain">    
+    <h3><span style="border-left: 4px solid #F5D481; padding-left: 8px;">Explain</span></h3><br>    
+    <ol>    
+      <li>Do not modify the deposit amount.</li>    
+      <li>Each deposit must be made through this page.</li>    
+      <li>If not received in 5 mins, contact support.</li>    
+      <li>Try again if too many users are online.</li>    
+    </ol><br>    
+  </div> <br><br><div id="rechargeRecord" class="withraw-record">  
+  <h3><span style="padding-left: 8px;">My Record</span></h3>  
+  <div id="records-list"></div>  
+</div> <br><br><br><br><br>  <!-- Recharge Now Button -->  <button class="recharge-btn" onclick="confirmRecharge()">Recharge Now</button>  </div>  <!-- New screen after recharge -->    
+<!-- RECHARGE CONFIRM PAGE -->  
+<div id="rechargeConfirmPage" class="fullpage" style="display:none;">  
+    <button onclick="closeFullPage()" class="back-btn">❮</button>  
+    <h2>Wallet</h2>    <!-- Amount + Timer -->    <div class="amount-box">  
+    <p>Payment Amount</p>  
+    <h1 id="displayAmount">₹0</h1>  
+    <div id="countdown">00:10:00</div>  
+  </div>    <!-- Direct Transfer -->    <div id="confirm-direct" class="tab-content">  
+    <p>1. Transfer <span id="directAmountText">₹0</span> to the following UPI</p>  
+    <div class="input-copy">  
+      <input id="directVpa" readonly />  
+      <button onclick="copyText('directVpa')">Copy</button>  
+    </div>  
+    <div class="input-copy">  
+      <input id="directAmount" readonly />  
+      <button onclick="copyText('directAmount')">Copy</button>  
+    </div>  
+    <p>2. Submit Ref No / UTR</p>  
+    <div class="input-copy">  
+     <input type="text" id="utrInputDirect" placeholder="Enter UTR">
+      <button onclick="submitUTR('direct')">Submit</button>  
+    </div>  
+  </div>    <!-- QR Code -->    <div id="confirm-qr" class="tab-content" style="display:none;">  
+    <h2 id="qrAmountText">₹0</h2>  
+    <p>Use Mobile Scan code to pay</p>  
+    <div id="qrBox"></div>  
+    <div class="input-copy" style="margin-top:10px;">  
+    <input type="text" id="utrInputQR" placeholder="Enter UTR">
+      <button onclick="submitUTR('qr')">Submit</button>  
+    </div>  
+  </div>  
+</div>  
+
+<div id="bindWalletPage" class="fullpage" style="display:none;">
+  <div class="header">
+    <button onclick="closeProfilePage()" class="back-btn">❮</button>
+    <h2>Bind Wallet Address</h2>
+  </div>
+
+  <div class="bind-box">
+    <div class="bind-icon">🔗</div>
+
+    <label>Real Name</label>
+    <input type="text" id="realName" placeholder="Enter your real name" />
+
+    <label>IFSC</label>
+    <input type="text" id="ifsc" placeholder="Enter IFSC" />
+
+    <label>Bank Account Number</label>
+    <input type="number" id="accountNumber" placeholder="Enter your bank account number" />
+    <label>Trade Password</label>
+    <input type="password" id="tradePass" placeholder="Set a trade password" />
+
+   <button class="confirm-btn" id="bindButton" onclick="bindWallet()">Confirm</button>
+
+  </div>
+</div>
+  <!-- Withdraw Full Page -->  <div id="withdrawPage" class="fullpage" style="display: none;">  
+  <button onclick="closeFullPage()" class="back-btn">❮ </button> <h2> Withdraw </h2> <br><br><br><br><br><br><br><br>
+  <div class="card">
+    
+    <label>Withdraw Amount</label>  
+    <input type="number" id="withdraw Input" placeholder=" Amount ₹200-1000000" /> <label>Trade Password </label>
+    <input type="number" id="trade input" placeholder="Password"/>
+    <button class="recharge-btn" onclick="confirmWithdraw()">Apply Withdraw </button>
+    
+  </div> <div class="card explain">
+    <h3><span style="border-left: 4px solid #F5D481; padding-left: 8px;">Explain</span></h3><br>
+    <ol>
+      <li> Daily marketing from 00:30:00 to 17:00:00</li><li> Withdraw an amount between 200 and 1000000</li><li> To facilitate financial settlement, you can only request withdrawal 3 times per day</li><li> Withdrawal fee: 10 percent</li><br></ol>
+  </div>
+  <div id="withrawRecord"class="withraw-record"><br>
+    <h3><span style=" padding-left: 8px;">My Record</span></h3>
+    <br><br>
+    
+  </div><br><br><br><br><br>
+  
+  
+  <!-- Withdraw content here -->    <!-- Service Full Page --></div>  <div id="servicePage" class="fullpage" style="display: none;">  
+  <button onclick="closeFullPage()" class="back-btn">❮ </button>  
+  <h2>Customer Service</h2> <br><br><br><br>
+  
+  <div id="chat-widget">
+
+    <div id="chat-messages">
+      </div>
+    <div id="chat-options">
+      </div>
+  </div>
+
+
+    
+    </div><br><br><br>
+
+
+ <div id="share" class="page" style="display: none;">  
+    <div class="share-wrapper"><h1 class="title-t">Share</h1>  
+      <div class="card">  
+        <p class="desc">  
+          Copy your invitation link and share it on major dating platforms or invite your family or friends to join. You can get high commissions  
+        </p>  
+        <div class="level">A-level commission 25%</div><br>  
+        <div class="level">B-level commission 3%</div><br>  
+        <div class="level">C-level commission 2%</div><br>
+      </div><br>  <!-- Link & Copy button -->  
+  <div class="link-wrapper">  
+    <input type="text" id="inviteLink" readonly value="https://www.jtiuainda6-mi6m." />  
+  </div><br><div class="copy-btn">  
+    <button onclick="copyLink()" style="width: 90px;
+  height: 35px;
+  background: #eee;
+  color: black;
+  border: 1px solid #daa;
+  border-radius: 12px;
+  font-size: 14px;
+  float: right;
+  font-weight: 700;
+  box-shadow:  rgb(45, 45, 45) 2px 2px 2px 0px inset,rgba(255, 255, 255, 1) -3px -3px 1px 0px inset;
+  margin-right: 12px;">Copy</button></div>  
+</div>
+
+  </div>    <div id="team" class="page" style="display: none;">
+  <div class="header-team">Team LV.<span id="levelTitle">1</span></div>
+
+  <div class="banner-container">
+    <img src="/Screenshot_2025-07-16-15-44-14-672_com.google.android.googlequicksearchbox.png" class="team-banner" alt="Banner">
+    <div class="summary-box">
+      <p>Team Recharge: <br>₹<span id="teamRecharge">0</span></p><br>
+      <p>Team Size:<br> <span id="teamSize">0</span></p>
+    </div>
+  </div>
+
+  <div class="level-tabs">
+    <button onclick="switchLevel(1)" class="active">LV:1</button>
+    <button onclick="switchLevel(2)">LV:2</button>
+    <button onclick="switchLevel(3)">LV:3</button>
+  </div>
+
+  <div class="user-list" id="userList"></div>
+</div>
+  <div id="my" class="page" style="display: none;">
+    <div class="profile-info">
+<div class="header-pro">
+  <div class="bg-blur"></div> <!-- 🔥 Blur effect layer -->
+
+  <div class="profile-content">
+      <img src="Screenshot_2025-07-15-22-15-43-052_com.google.android.googlequicksearchbox.png" alt="Profile">
+    <div class="user-info">
+      <h2>ID : <span id="userId">Loading...</span></h2>
+      <div id="VIPsec" class="vip" >VIP0</div>
+    </div>
+  </div>
+</div><br>
+
+  <div class="stats">
+    <div>
+    <strong> ₹<span id="user-balance">0.00</span></strong><br>
+  Total Balance </div>
+    <div>
+      <strong><span id="user-income">0.00</span></strong><br>Withdrawal Income 
+    </div>
+  </div>
+<!--ye profile ke button hain -->
+<div class="menu-list">
+  <button class="menu-btn" onclick="openMyOrderPage('openDevicesPage')">
+    <i class="fa-solid fa-file-text"></i> <span>My Product</span>
+    <span class="arrow">›</span>
+  </button>
+  <button class="menu-btn" onclick="openProfilePage('bindWalletPage') " >
+    <i class="fa-solid fas fa-landmark "></i> <span>Bind Bank</span>
+    <span class="arrow">›</span>
+  </button>
+  
+  
+  <button class="menu-btn" onclick="openProfilePage('personalPage')">
+    <i class="fa-solid fa-id-card"></i> <span>Personal Info</span>
+    <span class="arrow">›</span>
+  </button>
+  <button class="menu-btn" onclick="openProfilePage('incomePage')">
+    <i class="fa-solid fa-coins"></i><span>Income Details</span>
+    <span class="arrow">›</span>
+  </button>
+  <button class="menu-btn" onclick="openProfilePage('aboutPage')">
+    <i class="fa-solid fa-globe"></i> <span>About Us</span>
+    <span class="arrow">›</span>
+  </button>
+
+</div>
+
+<!--ye unka page open ka system hai -->
+
+<div id="openDevicesPage" class="fullpage" style="display: none;">
+  <button onclick="closeProfilePage()" class="back-btn">❮</button>
+  <h2>My Product</h2>
+  <br><br><br><br><br><br><br>
+   <div id="orderCard" class="card">
+    <!-- Plan details will be injected here -->
+  </div><br><br>
+  
+</div>
+
+<div id="bindWalletPage" class="fullpage" style="display:none;">
+    <button onclick="closeProfilePage()" class="back-btn">❮</button>
+    <h2>Bind Wallet Address</h2>
+  
+
+  <div class="bind-box">
+    <div class="bind-icon">🔗</div>
+
+    <label>Real Name</label>
+    <input type="text" id="realName" placeholder="Enter your real name" />
+
+    <label>IFSC</label>
+    <input type="text" id="ifsc" placeholder="Enter IFSC" />
+
+    <label>Bank Account Number</label>
+    <input type="number" id="accountNumber" placeholder="Enter your bank account number" />
+    
+    <label>TredePassword</label>
+    <input id="tradePass" placeholder="Trade Password" type="password" />
+
+    <button class="confirm-btn" onclick="bindWallet()">Confirm</button>
+  </div>
+</div>
+
+<div id="personalPage" class="fullpage" style="display: none;">
+  <button onclick="closeProfilePage()" class="back-btn">❮</button>
+  <h2>Personal Info</h2><br><br><br><br><br><br>
+  <div class="menu-list">
+    <button class="menu-btn" onclick="openProfilePage('change-login') " >
+    <i class="fa-solid fas fa-key "></i> <span>Login Password</span>
+    <span class="arrow">›</span>
+  </button>
+  
+  
+  </div>
+  <!-- Example small forms (place where suitable) -->
+
+</div>
+
+<div id="incomePage" class="fullpage" style="display: none;">
+  <h2>Income Details</h2><br><br><br><br><br><br>
+  <button onclick="closeProfilePage()" class="back-btn">❮</button>
+  <h4 style=" font-size: 20px; margin-left: 9px; color: black;">My Commission</h4><br>
+  <div class="commission-box">
+    <p>LV.1 Commission (30%): ₹<span id="commission1">0.00</span></p>
+    <p>LV.2 Commission (3%): ₹<span id="commission2">0.00</span></p>
+    <p>LV.3 Commission (2%): ₹<span id="commission3">0.00</span></p>
+    <hr>
+    <p><b>Total Commission:</b> ₹<span id="totalCommission">0.00</span></p>
+  </div>
+  <br>
+  <h3 style="margin-top: 20px; color: black; margin-left: 9px; font-size: 22px; "> Transaction History</h3><br><br>
+  
+    
+<div id="transactionList" class="transaction-list"></div>
+</div>
+
+<div id="aboutPage" class="fullpage" style="display: none;">
+  <button onclick="closeProfilePage()" class="back-btn">❮</button>
+ <div class="company-info"> <h2>About Us</h2><br><br><br><br><br>
+  <p>Speed Motors ek bharosemand naam hai jo high-performance industrial motors ke utpadan mein visheshagya hai. Ahmedabad, Gujarat mein sthit is company ne vibration motors, induction motors, aur custom-engineered electric motors ke kshetra mein apna ek vishesh sthal banaya hai.</p>
+
+<br><img src="/mech-desk.jpg"><br><p>
+
+ India no.1 certification ke saath, Speed Motors ke products har quality aur performance standard par khare utarte hain. Inke motors 20 HP se lekar 1200 HP tak ke range mein uplabdh hote hain.
+</p>
+<p>
+
+Yeh motors vibro screens, conveyors, chemical plants, aur construction machinery jaise industrial upkaranon mein upyogi hote hain. Company har product ko high durability aur precision ke saath tayar karti hai.</p>
+
+<br><img src="/engineers-work-on-engine-rolls-royce-plc-352-x-280px.png"><br><p>
+
+Speed Motors ka focus na keval engineering excellence par hai, balki har grahak ke liye customised, energy-efficient solutions prastut kar </p></div></div><div class="logout"><span onclick="logout()">Logout</span></div>
+</div></div>
+
+<div id="change-login" class="fullpage" style="display: none;">
+  
+  <button onclick="closeProfilePage()" class="back-btn">❮</button>
+  <h2>Login Password</h2><br><br><br><br><br><br>
+<div class="password-change-container">
+   
+    
+    <form id="passwordChangeForm">
+        <div class="input-group">
+            <label for="originalPass">original password</label>
+            <input type="password" id="originalPass" placeholder="Original password" required>
+             <span class="password-toggle">👁️</span>
+            </div>
+
+        <div class="input-group">
+            <label for="newPass">New Password</label>
+            <input type="password" id="newPass" placeholder="New password" required>
+             <span class="password-toggle">👁️</span>
+        </div>
+
+        <div class="input-group">
+            <label for="confirmPass">Confirm Password</label>
+            <input type="password" id="confirmPass" placeholder="New password again" required>
+             <span class="password-toggle">👁️</span>
+        </div>
+
+        <button type="submit" id="saveBtn" class="save-button">save</button>
+    </form>
+</div></div>
+<div id="toastPopup" class="toast-popup">
+    <div class="toast-icon"></div>
+    <div class="toast-text" id="toastText">Success</div>
+  </div>
+
+
+
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

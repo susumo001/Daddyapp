@@ -1,0 +1,44 @@
+{
+  "users": {
+    "1234567890": {
+      "balance": 0,
+      "userIncome": 0,
+      "invitedBy": null,
+      "transactions": [],
+      "boughtPlans": [],
+      "vipLevel": 0
+    }
+  },
+  "registeredUsers": {
+    "9999": {
+      "password": "1234",
+      "referredByRefCode": null,
+      "refCode": "220017",
+      "upline": {
+        "l1": null,
+        "l2": null,
+        "l3": null
+      }
+    },
+    "1234567890": {
+      "password": "1234",
+      "referredByRefCode": null,
+      "refCode": "258470",
+      "upline": {
+        "l1": null,
+        "l2": null,
+        "l3": null
+      }
+    },
+    "1234567899": {
+      "password": "1234",
+      "referredByRefCode": "258470",
+      "refCode": "450729",
+      "upline": {
+        "l1": "1234567890",
+        "l2": null,
+        "l3": null
+      }
+    }
+  }
+}

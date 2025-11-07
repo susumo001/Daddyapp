@@ -1,0 +1,1403 @@
+/* === UNIVERSAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BASE === */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.record-item {
+  border: 1px solid #ccc;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 14px;
+}
+
+/* === FIXED CONTAINER === */
+.page {
+  padding-bottom: 80px; /* bottom nav ke liye */
+  box-sizing: border-box;
+  
+
+}
+.page.active { display: block; }
+
+/* === AUTH SCREEN === */
+.auth-screen { 
+  width: 90%;
+  max-width: 500px;
+  margin: 90px auto 0;
+  padding: 37px;
+  border-radius: 13px;
+  box-shadow: 0 0 5px gray;
+  background: rgba(105, 0, 0,0.3);
+  padding-bottom: 90px;
+}
+
+/* === LOGO === */
+.img-group img {
+  display: block;
+  width: 140px;
+  margin: 0 auto 10px;
+  border: none;
+}
+
+/* === TABS === */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+.tabs button {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  background: rgb(210, 210, 210);
+  border: 1px solid grey;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  
+}
+.tabs button.active {
+  background: rgb(230, 230, 230);
+  color: #800000;
+  box-shadow:  rgb(110, 110, 110) 3px 3px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  font-size: 19px;
+  border: none;
+}
+
+/* === INPUTS & BUTTONS === */
+input {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgb(230, 230, 230);
+  font-size: 15px;
+  box-shadow:  rgb(100, 100, 100) 3px 3px 2px 0px inset,rgba(255, 255, 255, 1) -4px -4px 2px 0px inset;
+}
+
+.auth-btn {
+  width: 95%;
+  padding: 13px;
+  margin: 15px auto;
+  display: block;
+  font-size: 20px;
+      color: black;
+      font-weight: bold;
+      background: rgb(230, 230, 230);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow:  rgb(100, 100, 100) 3px 3px 2px 0px inset,rgba(255, 255, 255, 1) -2px -5px 2px 0px inset;
+    }
+
+
+p {
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  
+  cursor: pointer;
+}
+
+/* === HEADER === */
+.top-header {
+      background: linear-gradient( 85deg
+      ,#400000,#600
+      ,#900000,#a03000,#900000,#600,#400000);
+      height: 400px;
+      margin-top: -20px;
+      background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: bg 7s ease-in-out infinite;
+  will-change: background-position;
+    }
+       @keyframes bg{
+        0%{
+          background-position: 0% 50%;
+        }
+      50%{
+        background-position: 100% 100%;
+      } 
+      100%{
+        background-position: 0% 50%;
+      }
+        
+      }
+    .top-header img {
+      width: 160px;
+      margin-right: 200px;
+      padding-top: 10px;
+      margin-top: 10px;
+      border: none;
+    }
+
+    .page {
+      
+      padding-top: 0px;
+      
+      min-height: 100vh;
+    }
+
+
+/* === SLIDER === */
+.slider-container {
+  overflow: hidden;
+  width: 98%;
+  height: 230px;
+  margin: 10px auto;
+  border-radius: 15px;
+  border: 1px solid #555;
+  box-shadow: 0 0 2px #555;
+  background: #000;
+}
+.slider {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  height: 100%;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* === BOTTOM NAVIGATION === */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ddd; 
+  z-index: 999;
+  
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
+}
+.nav-item.active,
+.nav-item:hover {
+  color: #800000;
+}
+.nav-item i {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}
+
+/* === SHARE PAGE === */
+.title-t {
+  text-align: center;
+  color: brown;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  top: -80px;
+}
+.app-screen {
+  background: rgba(105, 0, 0,0.3);
+  min-height: 400px;
+  padding-top: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.share-page {width: 90%;
+margin-left: 18px;
+min-height: 100vh;
+
+
+
+}
+
+
+.desc {
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  padding: 15px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.4em;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.level {
+  padding: 10px;
+  border-radius: 8px;
+  margin: 6px 0;
+  color: brown;
+  font-weight: bold;
+  font-size: 19px;
+}
+.link-wrapper {
+  width: 95%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+  gap: 10px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+.link-wrapper input {
+  flex: 1;
+  padding: 13px;
+  border: 1px solid #daa;
+  background: #eee;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* === TAB BAR === */
+.tab-bar {
+  display: flex;
+  width: 100%;
+  background-color: #ddd;
+  font-size: 17px;
+  padding: 10px 1px;
+  justify-content: space-around;
+  width: 97%;
+  margin-left: 6px;
+  border-radius: 3px;
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+}
+
+.tab-bar .active-tab {
+  font-weight: bold;
+  color: #800000;
+
+}
+
+/* === BUTTON GROUP === */
+.btn-group button {
+  padding: 19px;
+  width: 43%;
+  margin: 8px;
+  border: 1px solid #caa;
+  border-radius: 28px;
+  background-color: #eee;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #000;
+}
+.btn-group button.active {
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  font-size: 19px;
+  color: #800000;
+  background: #eee;
+}
+
+/* === VIP CARDS === */
+.plan-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px;
+  border: none;
+  box-shadow: 4px 4px 3px #222;
+}
+.upgrade {
+  
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(30deg, #000,#800000,#800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    
+  margin-left: 10px;
+  font-weight: bold;
+}
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.engine-img {
+  width: 110px;
+  height: auto;
+  color: #000;
+  border: none;0
+
+}
+.price-text {
+  margin-right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+.info-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  text-align: center;
+}
+.info-label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 2px;
+}
+.info-value {
+  color: black;
+  font-size: 19px;
+  font-weight: 600;
+}
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.buy-btn {
+  color: #800;
+      font-weight: bold;
+      background: #eee;
+      border: 2px solid #eee;
+      border-radius: 30px;
+  padding: 10px 30px;
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.buy-soon {
+  color: #555;
+      font-weight: bold;
+      background: #eee;
+      border: 2px solid #eee;
+      
+      border-radius: 30px;
+  padding: 10px 30px;
+  
+  font-weight: bold;
+  font-size: 14px;
+  
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+}
+
+/* back button*/
+.fullpage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(222, 201, 201);
+
+  overflow-y: auto;
+  z-index: 999;
+  box-sizing: border-box;
+}
+.fullpage h2{
+  
+  color: white;
+  background: rgb(110, 5, 5);
+  text-shadow: 0 3px 9px rgba(255, 185, 3, 0.6 );
+  font-size: 33px;
+  padding: 14px;
+  width: 100%;
+  text-align: center;
+  
+  position: relative;
+ position: fixed;
+  z-index: 10;
+
+}
+.back-btn {
+  width: 50px;
+  position: absolute;
+  z-index: 11;
+  font-size: 35px;
+  color: #fff;
+  background: none;
+  border: none;
+  position: fixed;
+  float: left;
+  top: 5px;
+}
+
+
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.card {
+  background: white;
+  color: black;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.quick-amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.quick-amounts button:focus{
+  background: #fdf6e3;
+}
+
+.quick-amounts button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #800;
+  background: #fdf6e3;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 700;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.channel span {
+  font-size: 16px;
+}
+
+.channel input  {
+  margin-left: 210px;  /* ✅ Pushes the radio to right */
+  width: 18px;
+  height: 18px;
+  accent-color: #17f;
+  box-shadow: none;
+}
+
+
+.explain ol {
+  padding-left: 20px;
+  color: #333;
+}
+
+.recharge-btn {
+  position: fixed;
+  top: 650px;
+  left: 26px;
+  width: 85%;
+  background: #eee;
+  border: 2px solid #ececec;;
+  padding: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #800;
+  border-radius:  32px; /* bottom corners rounded */
+  cursor: pointer;
+  z-index: 1000;
+  margin-bottom: 30px;
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+}
+.recharge-btn:focus{
+  background: #eee;
+}
+/* ===== Recharge Confirm Page ===== */
+#rechargeConfirmPage {
+  background: #f7f3f3;
+  min-height: 100vh;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Amount box */
+.amount-box {
+  text-align: center;
+  background: #5d0b0b;
+  color: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  margin: 15px;
+  margin-top: 90px;
+}
+.amount-box p{
+  color: #fff;
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+
+#rechargeConfirmPage.amount-box h1 {
+  margin: 8px 0;
+  font-size: 34px;
+  
+}
+#rechargeConfirmPage #countdown {
+  font-size: 17px;
+  margin-top: 6px;
+}
+
+/* Tabs */
+#rechargeConfirmPage .tabs {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  gap: 10px;
+}
+#rechargeConfirmPage .tabs button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  background: #ddd;
+  cursor: pointer;
+}
+#rechargeConfirmPage .tabs button.active {
+  background: #6a0f0f;
+  color: #fff;
+}
+
+/* Tab content */
+#rechargeConfirmPage .tab-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 0 15px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Input + Copy Button layout */
+#rechargeConfirmPage .input-copy {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+#rechargeConfirmPage .input-copy input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+#rechargeConfirmPage .input-copy button {
+  margin-top: 12px;
+  width: 57px;
+  height: 37px;
+  border-radius: 6px;
+  border: none;
+  background: #6a0f0f;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+#rechargeConfirmPage .input-copy button:hover {
+  opacity: 0.85;
+}
+
+/* QR section */
+#rechargeConfirmPage #qrBox {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+#rechargeConfirmPage #qrAmountText {
+  font-size: 26px;
+  margin: 10px 0;
+  color: #6a0f0f;
+  background: transparent;
+  top: 230px;
+  right: 7px;
+  font-size: 26px;
+  font-weight: 900;
+}
+#confirm-qr p{
+  padding-top: 30px;
+}
+/* withdraw*/
+.withraw-record{
+  background: white;
+  color: black;
+  border-radius: 8px;
+  border: white;
+  
+}
+/*profile*/
+.header-pro {
+  margin-top: -74px;
+  margin-right: -3px;
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  color: white;
+  z-index: 1;
+}
+
+.bg-blur {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/warsawpoland-07152020-bmw-m8-engine-600nw-1798396231.jpg'); /* ✅ Your background image here */
+  background-size: cover;
+  background-position: center;
+  filter: blur(0.5px); /* ✅ This applies the blur */
+  z-index: 0;
+}
+
+.profile-content {
+  display: flex;
+  margin-top: 130px;
+  z-index: 1; /* keep profile image above blurred background */
+}
+
+
+
+.profile-content img {
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 50%;
+  left: 5px;
+}
+
+.user-info h2 {
+  left: 20px;
+  margin-top: 30px;
+  font-size: 20px;
+  
+}
+
+.vip {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 8px;
+  left: 20px;
+  font-weight: 700;
+}
+
+    .stats {
+      margin: 0 7px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      background-color: #ededed;
+      padding: 15px 0;
+      box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+      border-radius: 2px;
+    }
+
+    .stats div {
+      font-size: 16px;
+      
+    }
+
+    .menu-list {
+  padding: 15px;
+  background-color: #eee;
+  border-radius: 12px;
+  margin: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;  /* light pink jaisa */
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  border: 2px solid #ddd;
+  width: 100%;
+  box-shadow:  rgb(110, 110, 110) 4px 4px 1px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  color: #000;
+}
+
+.menu-btn i {
+  font-size: 18px;
+  margin-right: 12px;
+  color: #000;
+}
+
+.menu-btn span.arrow {
+  margin-left: auto;
+  font-size: 18px;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #888;
+}
+
+ .logout {
+  margin: 20px;
+  background: #eee;
+      color: #800;
+      padding: 10px;
+      border: 1px solid #fcc;
+      border-radius: 25px;
+      width: 89%;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 3px 3px 4px #000;
+    }
+    /*team*/
+    
+.header-team {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 12px 0;
+  font-weight: bold;
+  margin-top: -73px;
+}
+
+.banner-container {
+  position: relative;
+}
+
+.team-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.summary-box {
+  position: absolute;
+  top: 42%;
+  left: 10px;
+  background-color: rgba(118,0,0,0.91);
+  color: black;
+  padding: 4px 13px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.summary-box p{
+  color: #fff;
+  text-align: left;
+  font-size: 16px;
+  
+}
+
+.level-tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: #800000;
+  margin-top: 20px;
+  padding: 8px 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.level-tabs button {
+  flex: 1;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+}
+
+.level-tabs button.active,
+.level-tabs button:hover {
+  background-color: white;
+  color: #800000;
+}
+
+
+.user-list {
+  padding: 10px;
+}
+
+.user-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 12px;
+  margin: 10px auto;
+  width: 92%;
+}
+
+.user-card-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+  width: 60px;
+}
+
+.user-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 6px;
+  object-fit: contain;
+}
+
+.user-id {
+  margin-top: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+}
+
+.right-part {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.right-part p {
+  color: #000;
+  font-size: 15px;
+}
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* ya full center chahiye to use 60vh or 100% */
+  font-size: 40px;
+  font-weight: 800;
+  color: #888;
+  text-align: center;
+}
+
+/*commission*/
+.commission-box {
+  background: #fff3e0;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-size: 18px;
+}
+.commission-box p {
+  margin: 8px 0;
+}
+/* about us*/
+.company-info p {
+  text-align: left;
+  font-size: 21px;
+  margin: 10px;
+  color: black;
+  margin-top: 35px;
+  font-weight: 420;
+}
+.company-info img{
+  margin-left: 15px;
+  width: 354px;
+  height: 216px;
+  border-radius: 8px;
+  border: none;
+}
+/* buy now*/
+/* Popup Style */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: rgba(100, 100, 100, 0.98);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup-buttons button {
+    
+      margin: 8px;
+      padding: 13px 29px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .popup-buttons button:first-child {
+      background: #ccc;
+    }
+
+    .popup-buttons button:last-child {
+      background: #800000;
+      color: white;
+    }
+    
+
+    
+    /* Optional fade hint bottom pe */
+    .Translist::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      pointer-events: none;
+      
+    }
+
+    /* Scrollbar styling (modern WebKit) */
+ .transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.transaction-card {
+  background: #eee;
+  border-radius: 16px;
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid transparent;
+  width: 95%;
+  margin-left: 10px;
+}
+
+.transaction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -10px rgba(0,0,0,0.2);
+}
+
+.transaction-type {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+  text-shadow:
+      
+      0 4px 3px rgba(0,0,0,0.4);
+    
+    
+}
+
+.transaction-amount.red {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 4px 0 0;
+  color: red;
+  margin-bottom: 15px;
+}
+.transaction-amount.green {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 4px 0 0;
+  margin-bottom: 15px;
+  color: green;
+  
+}
+
+
+.transaction-meta {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #000;
+  margin-top: 6px;
+  flex: 1 1 100%;
+  text-align: right;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 799px;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: none;
+  margin-left: -15px;
+  margin-right: 20px;
+  
+}
+
+/* Accent colors by type */
+.transaction-card.daily-income { border-left-color: #28a945; }
+.transaction-card.recharge { border-left-color: #2d9fef; }
+.transaction-card.purchase { border-left-color: #a63d00; }
+.transaction-card.commission { border-left-color: #0000ff; }
+.transaction-card.level1 .badge { background: #ffe8d6; color: #b35c00; }
+.transaction-card.level2 .badge { background: #e8f3ff; color: #005b99; }
+.transaction-card.level3 .badge { background: #f0e8ff; color: #5d0099; }
+
+
+/* Page Background */
+#bindWalletPage {
+  padding-top: 19px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+/* Box */
+.bind-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Icon */
+.bind-icon {
+  background: #800;
+  color: #fff;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+/* Labels */
+.bind-box label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs */
+.bind-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.confirm-btn:hover {
+  background: #a00;
+}
+.record-card p{
+  text-align: left;
+  justify-content: left;
+  margin-left: 20px;
+  padding-bottom: 3px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.form{display:none;margin-top:10px;}
+.form.active{display:block;}
+.form active input{display:block;margin:5px 0;padding:6px;width:200px;}
+.form input{display:block;margin:5px 0;padding:6px;width:200px;}
+
+/* === pass change BUTTON === */
+.passchangebtn button {
+  padding: 19px;
+  width: 43%;
+  margin: 8px;
+  border: 1px solid #caa;
+  border-radius: 28px;
+  background-color: #eee;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #000;
+}
+.passchangebtn button.active {
+  box-shadow:  rgb(110, 110, 110) 4px 4px 2px 0px inset,rgba(265, 265, 265, 1) -4px -4px 2px 0px inset;
+  font-size: 19px;
+  color: #800000;
+  background: #eee;
+}
+
+/* Zaroori Stylesheets for the given UI */
+
+.password-change-container {
+    padding: 0 20px;
+    font-family: Arial, sans-serif; /* Example font */
+}
+
+/* Top Bar: Blue/Teal Gradient */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin: -20px -20px 20px -20px; /* To cover full width */
+    background: linear-gradient(to right, #00BCD4, #00A896); /* Teal/Blue Gradient */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.title-h {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Input Fields Styling */
+.input-group {
+  display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd; /* Light separator line */
+    padding-bottom: 5px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: bold; /* Label text ko bold kiya */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    outline: none; /* Focus outline hataya */
+    font-size: 16px;
+    color: #000;
+    padding-left: 12px;
+    
+}
+
+/* Save Button Styling (Gradient) */
+.save-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px; /* Slightly rounded corners */
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    
+    /* Main Gradient (Green-Blue) */
+    background: linear-gradient(to right, #4CAF50, #00BCD4); /* Example Gradient */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 29px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    z-index: 999;
+    margin-top: 35px;
+}
+
+
+
+/* === NAYA CHAT CSS (PURAANE KO ISSE BADAL DEIN) === */
+
+#chat-widget {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 620px;
+  background-color: rgb(222, 201, 201);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+#chat-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(222, 201, 201); /* Chat background color */
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot {
+  background-color: #ffffff;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+#chat-options {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  background-color: rgb(222, 201, 201);
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  margin: 15px;
+}
+
+.option-btn {
+  background-color: #800;
+  color: white;
+  border: none;
+  padding: 4px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+/* === TOAST POPUP (Success Message) === */
+
+.toast-popup {
+  /* Box ka style (Aapke image jaisa) */
+  background: rgba(0, 0, 0, 0.75); /* Kaala, halka transparent */
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  
+  /* Screen ke beech mein rakhein */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Sabse upar dikhe */
+  z-index: 9999;
+  
+  /* 1. Shuru mein chhipa (hidden) rahega */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Click na ho sake */
+
+  /* 2. Fade hone ka animation */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 3. Jab yeh 'show' class add hogi, tab yeh dikhega */
+.toast-popup.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.toast-icon {
+  font-size: 40px; /* Checkmark ka size */
+  font-weight: bold;
+}
+
+.toast-text {
+  font-size: 16px;
+  margin-top: 5px;
+}
